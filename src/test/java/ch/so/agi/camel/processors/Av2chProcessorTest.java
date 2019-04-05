@@ -26,7 +26,7 @@ public class Av2chProcessorTest extends CamelTestSupport {
         MockEndpoint resultEndpoint = getMockEndpoint("mock:result");
         resultEndpoint.expectedMinimumMessageCount(1);  
 
-        Thread.sleep(5000);
+//        Thread.sleep(5000);
         
         
         Exchange exchange = resultEndpoint.getExchanges().get(0);
