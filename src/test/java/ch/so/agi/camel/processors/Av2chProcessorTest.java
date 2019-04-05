@@ -15,7 +15,7 @@ public class Av2chProcessorTest extends CamelTestSupport {
         return new RouteBuilder() {
             public void configure() throws Exception {
                 from("file://src/test/data/?fileName=254900.itf&noop=true")
-                .process(new Av2chProcessor())
+                //.process(new Av2chProcessor())
                 .to("mock:result");
             }
         };
