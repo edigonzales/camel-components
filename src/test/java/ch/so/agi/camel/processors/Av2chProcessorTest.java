@@ -25,18 +25,17 @@ public class Av2chProcessorTest extends CamelTestSupport {
     public void runProcessor_Ok() throws Exception {
         MockEndpoint resultEndpoint = getMockEndpoint("mock:result");
         resultEndpoint.expectedMinimumMessageCount(1);  
-        resultEndpoint.setResultWaitTime(20000);
+        resultEndpoint.setResultWaitTime(30000); // for travis
         
         assertMockEndpointsSatisfied();
 
         Exchange exchange = resultEndpoint.getExchanges().get(0);
         File resultFile = exchange.getIn().getBody(File.class);
         
-        //long resultSize = resultFile.length();
-        //assertTrue(resultSize > 590000);
+        long resultSize = resultFile.length();
+        assertTrue(resultSize > 590000);
         
-        //String content = new String(Files.readAllBytes(Paths.get(resultFile.getAbsolutePath())));
-        //assertTrue(content.contains("MODL DM01AVCH24LV95D"));
-        
+        String content = new String(Files.readAllBytes(Paths.get(resultFile.getAbsolutePath())));
+        assertTrue(content.contains("MODL DM01AVCH24LV95D"));
     }
 }
