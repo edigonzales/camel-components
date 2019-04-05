@@ -21,6 +21,9 @@ public class Av2chProcessor implements Processor {
         Av2ch av2ch = new Av2ch();
         av2ch.convert(inFile.getAbsolutePath(), tempDir.toFile().getAbsolutePath(), "de");
         
+        System.out.println(outFile.getAbsolutePath());
+        System.err.println(outFile.getAbsolutePath());
+        
         exchange.getIn().setBody(outFile);
     }
 }
