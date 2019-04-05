@@ -26,7 +26,7 @@ dependencies {
     api "org.apache.camel:camel-core:${apacheCamelVersion}"
     api "org.apache.camel:camel-test:${apacheCamelVersion}"
     api "ch.interlis:ilivalidator:1.11.0"
-    api "ch.so.agi.av:av2ch:1.0.5"
+    api "ch.so.agi.av:av2ch:1.0.6"
     testImplementation 'junit:junit:4.12'
 }
 
