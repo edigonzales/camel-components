@@ -10,4 +10,4 @@ branches:
 install: true
 
 script:
-  - ./gradlew clean build
+  - ./gradlew clean test -i
