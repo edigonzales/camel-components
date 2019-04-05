@@ -15,7 +15,7 @@ public class Av2chProcessorTest extends CamelTestSupport {
         return new RouteBuilder() {
             public void configure() throws Exception {
                 from("file://src/test/data/?fileName=254900.itf&noop=true")
-                //.process(new Av2chProcessor())
+                .process(new Av2chProcessor())
                 .to("mock:result");
             }
         };
@@ -28,7 +28,6 @@ public class Av2chProcessorTest extends CamelTestSupport {
 
         Thread.sleep(5000);
         
-        assertMockEndpointsSatisfied();
         
         Exchange exchange = resultEndpoint.getExchanges().get(0);
         File resultFile = exchange.getIn().getBody(File.class);
@@ -38,5 +37,7 @@ public class Av2chProcessorTest extends CamelTestSupport {
         
         String content = new String(Files.readAllBytes(Paths.get(resultFile.getAbsolutePath())));
         assertTrue(content.contains("MODL DM01AVCH24LV95D"));
+        
+        assertMockEndpointsSatisfied();
     }
 }
