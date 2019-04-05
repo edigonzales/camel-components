@@ -24,6 +24,6 @@ public class Av2chProcessor implements Processor {
         System.out.println(outFile.getAbsolutePath());
         System.err.println(outFile.getAbsolutePath());
         
-        //exchange.getIn().setBody(outFile);
+        exchange.getIn().setBody(outFile);
     }
 }
