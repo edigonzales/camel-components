@@ -14,15 +14,15 @@ public class Av2chProcessor implements Processor {
 
     @Override
     public void process(Exchange exchange) throws Exception {
-//        File inFile = exchange.getIn().getBody(File.class);
-//        Path tempDir = Files.createTempDirectory("av2ch_");
-//        File outFile = Paths.get(tempDir.toFile().getAbsolutePath(), "ch_" + inFile.getName()).toFile();
-//        
-//        Av2ch av2ch = new Av2ch();
-//        av2ch.convert(inFile.getAbsolutePath(), tempDir.toFile().getAbsolutePath(), "de");
-//        
-//        System.out.println(outFile.getAbsolutePath());
-//        System.err.println(outFile.getAbsolutePath());
+        File inFile = exchange.getIn().getBody(File.class);
+        Path tempDir = Files.createTempDirectory("av2ch_");
+        File outFile = Paths.get(tempDir.toFile().getAbsolutePath(), "ch_" + inFile.getName()).toFile();
+        
+        Av2ch av2ch = new Av2ch();
+        av2ch.convert(inFile.getAbsolutePath(), tempDir.toFile().getAbsolutePath(), "de");
+        
+        System.out.println(outFile.getAbsolutePath());
+        System.err.println(outFile.getAbsolutePath());
         
         //exchange.getIn().setBody(outFile);
     }
