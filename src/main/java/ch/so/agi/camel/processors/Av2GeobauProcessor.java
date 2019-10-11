@@ -22,8 +22,6 @@ public class Av2GeobauProcessor implements Processor {
 
         Settings settings=new Settings();
         settings.setValue(Av2geobau.SETTING_ILIDIRS, Av2geobau.SETTING_DEFAULT_ILIDIRS);
-
-        EhiLogger.getInstance().setTraceFilter(false);
         
         boolean ok = Av2geobau.convert(itfFile, dxfFile, settings);
         
