@@ -33,7 +33,7 @@ dependencies {
     api "org.apache.camel:camel-test:${apacheCamelVersion}"
     api "ch.interlis:ilivalidator:1.11.0"
     api "ch.so.agi.av:av2ch:1.0.12"
-    api ('ch.interlis:av2geobau:latest.integration') {changing = true}
+    api ('ch.interlis:av2geobau:1.0.0-SNAPSHOT') //{changing = true}
     testImplementation 'junit:junit:4.12'
 }
 
